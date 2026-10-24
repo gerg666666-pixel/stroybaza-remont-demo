@@ -48,7 +48,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,249,246,.9);backdrop
 .hero{padding:66px 0 54px;background:
   radial-gradient(680px 320px at 84% -10%,rgba(180,85,47,.10),transparent 62%),
   radial-gradient(520px 300px at 4% 8%,rgba(47,107,79,.07),transparent 60%)}
-.kicker{display:inline-flex;gap:9px;align-items:center;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);background:rgba(180,85,47,.08);border:1px solid rgba(180,85,47,.22);border-radius:999px;padding:7px 15px;font-weight:700;margin-bottom:20px}
+.kicker{display:inline-flex;gap:9px;align-items:center;font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:#9c4522;background:rgba(180,85,47,.08);border:1px solid rgba(180,85,47,.22);border-radius:999px;padding:7px 15px;font-weight:700;margin-bottom:20px}
 .hero .lead{font-size:1.1rem;color:#4d4941;max-width:600px;margin-top:16px}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
@@ -61,7 +61,7 @@ section{padding:68px 0}
 
 .types{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(268px,1fr))}
 .t{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:12px}
-.t .tag{font-size:.74rem;font-weight:800;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+.t .tag{font-size:.74rem;font-weight:800;letter-spacing:.1em;color:#9c4522;text-transform:uppercase}
 .t p{color:var(--muted);font-size:.92rem;flex:1}
 .t .p{font-size:1.2rem;font-weight:800}
 .t .p small{font-weight:400;font-size:.79rem;color:var(--muted);display:block;margin-top:2px}
@@ -78,9 +78,12 @@ input[type=range]{flex:1;accent-color:var(--accent);height:4px}
 .opts{display:flex;gap:8px;flex-wrap:wrap}
 .opt{padding:10px 14px;border-radius:9px;border:1px solid var(--line);background:var(--paper-2);color:#40403a;font-size:.87rem;cursor:pointer;transition:.15s;font-weight:600}
 .opt:hover{border-color:#c9c1b4}
-.opt[aria-pressed="true"]{background:rgba(180,85,47,.1);border-color:var(--accent);color:var(--accent)}
-.check{display:flex;gap:9px;align-items:flex-start;font-size:.89rem;color:#4d4941;cursor:pointer;padding:6px 0}
-.check input{margin-top:3px;accent-color:var(--accent);width:16px;height:16px}
+.opt[aria-pressed="true"]{background:rgba(180,85,47,.12);border-color:var(--accent);color:#9c4522}
+.check{display:flex;gap:10px;align-items:center;font-size:.89rem;color:#43403a;cursor:pointer;padding:9px 0;border-bottom:1px dashed #eae4da}
+.check:last-of-type{border-bottom:0}
+.check input{margin:0;flex:0 0 16px;accent-color:var(--accent);width:16px;height:16px}
+.check .tx{flex:1}
+.check .pr{font-weight:700;color:#9c4522;white-space:nowrap;font-variant-numeric:tabular-nums}
 .res{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:8px}
 .res .l{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .res .v{font-size:1.95rem;font-weight:800;letter-spacing:-.02em;color:var(--accent)}
@@ -102,7 +105,7 @@ input[type=range]{flex:1;accent-color:var(--accent);height:4px}
 
 .rev{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(272px,1fr))}
 .q{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px}
-.q .st5{color:#d99b2b;letter-spacing:2px;font-size:.88rem}
+.q .st5{color:#b8811c;letter-spacing:2px;font-size:.88rem}
 .q p{font-size:.93rem;color:#3c3934}
 .q .who{font-size:.83rem;color:var(--muted);border-top:1px solid var(--line);padding-top:11px}
 
@@ -129,7 +132,7 @@ details p{color:var(--muted);font-size:.92rem;margin-top:11px;max-width:760px}
 
 footer{border-top:1px solid var(--line);padding:36px 0 28px;font-size:.86rem;color:var(--muted)}
 .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.dtag{display:inline-block;margin-top:14px;font-size:.75rem;letter-spacing:.05em;border:1px dashed #cfc7ba;border-radius:999px;padding:5px 12px;color:#8d877e}
+.dtag{display:inline-block;margin-top:14px;font-size:.75rem;letter-spacing:.05em;border:1px dashed #cfc7ba;border-radius:999px;padding:5px 12px;color:#736d62}
 </style>
 </head>
 <body>
@@ -229,9 +232,9 @@ footer{border-top:1px solid var(--line);padding:36px 0 28px;font-size:.86rem;col
 
         <div class="field" style="margin-bottom:0">
           <label>Что добавить</label>
-          <label class="check"><input type="checkbox" id="c1" data-add="60000"> Перепланировка с согласованием <span class="muted">+60 000 ₽</span></label>
-          <label class="check"><input type="checkbox" id="c2" data-add="45000"> Тёплый пол в двух зонах <span class="muted">+45 000 ₽</span></label>
-          <label class="check"><input type="checkbox" id="c3" data-add="38000"> Вывоз мусора и грузчики <span class="muted">+38 000 ₽</span></label>
+          <label class="check"><input type="checkbox" id="c1" data-add="60000"><span class="tx">Перепланировка с согласованием</span><span class="pr">+60 000 ₽</span></label>
+          <label class="check"><input type="checkbox" id="c2" data-add="45000"><span class="tx">Тёплый пол в двух зонах</span><span class="pr">+45 000 ₽</span></label>
+          <label class="check"><input type="checkbox" id="c3" data-add="38000"><span class="tx">Вывоз мусора и грузчики</span><span class="pr">+38 000 ₽</span></label>
         </div>
       </div>
 
